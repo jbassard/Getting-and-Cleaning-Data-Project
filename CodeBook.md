@@ -1,4 +1,4 @@
-This Code Book summarizes the resulting data presented in "tidy.txt".
+This Code Book summarizes the resulting data presented in "TidyDataSet.txt".
 
 
 #Source data
