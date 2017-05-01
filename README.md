@@ -15,9 +15,9 @@ CodeBook.md describes the variables, the data, and any transformations performed
 ## Code explaination
 
 The R script "run_analysis.R" does the following:
- * Download the dataset and unzip it, if files do not exist in working directory
+ * Download the dataset and unzip it, if files do not exist in the working directory
  * Load the different datasets and information
- * Combine trainings and tests datasets in one metadata.
+ * Combine trainings and tests datasets in one metadataset.
  * Retrieve only columns containing mean or standard deviation data.
  
 
