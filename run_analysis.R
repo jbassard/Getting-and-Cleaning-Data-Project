@@ -26,18 +26,17 @@ Ymerge <- rbind(Ytrain, Ytest)
 Subjectmerge <- rbind(SubjectTrain, SubjectTest)
 
 ##Create names for variables
-names(Xmerge) <- c("Subject")
+names(Subjectmerge) <- c("Subject")
 names(Ymerge) <- c("Activity")
-variable_names <- read.table(file.path(path_data, "features.txt"), header=FALSE)
-names(Subjectmerge)<- variable_names$V2
+variablenames <- read.table(file.path(path_data, "features.txt"), header=FALSE)
+names(Xmerge)<- variablenames$V2
 
 ##Final merging (by column)
-thedataset <- cbind(Xmerge, Ymerge, Subjectmerge)
+thedataset <- cbind(Xmerge, Subjectmerge, Ymerge)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement
-##Extract measurements on mean and SD
-selected_var <- variable_names[grep("mean\\(\\)| std\\(\\)", variable_names[,2]),]
-mean_SD <- thedataset[,selected_var[,1]]
+selectedvar <- variablenames[grep("mean\\(\\)| std\\(\\)", variablenames[,2]),]
+mean_SD <- thedataset[,selectedvar[,1]]
 
 #Uses descriptive activity names to name the activities in the dataset
 ##Read descriptive activity names from "activity_labels.txt"
