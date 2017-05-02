@@ -60,8 +60,10 @@ names(almosttidyset) <- gsub("BodyBody", "Body", names(almosttidyset))
 
 #5-From the data set in step 4, create a second independent tidy data set, with the average of each variable for each activity and each subject
 ##Average (mean) data by subject and by activity
-TidyDataSet <- aggregate(. ~Subject + Activity, almosttidyset, FUN = mean)
+TidyDataSet <- aggregate(. ~Subject + ActivityName, almosttidyset, FUN = mean)
 TidyDataSet <- TidyDataSet[order(TidyDataSet$Subject, TidyDataSet$Activity), ] #sorting of the data by subjects and activities
+TidyDataSet <- TidyDataSet[ ,-3] #remove extra column named "Activity"
 
 ##Write the final table
 write.table(TidyDataSet, "./data/TidyDataSet.txt", row.name=FALSE, col.names = TRUE)
+View (TidyDataSet)
