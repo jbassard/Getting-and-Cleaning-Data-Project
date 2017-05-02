@@ -50,16 +50,13 @@ colnames(activityLabels) <- c("Activity","ActivityName")
 almosttidyset <- merge(meanSD, activityLabels, by= "Activity", all.x=TRUE)
 
 #Appropriately labels the data set with descriptive variable names.
-
-##activity names applied to the dataset
-names(thedataset)<-gsub("^t", "time", names(thedataset))
-names(thedataset)<-gsub("^f", "frequency", names(thedataset))
-names(thedataset)<-gsub("Acc", "Accelerometer", names(thedataset))
-names(thedataset)<-gsub("Gyro", "Gyroscope", names(thedataset))
-names(thedataset)<-gsub("Mag", "Magnitude", names(thedataset))
-names(thedataset)<-gsub("BodyBody", "Body", names(thedataset))
-
-View(thedataset)
+names(almosttidyset)<-gsub("^t", "Time", names(almosttidyset))
+names(almosttidyset)<-gsub("Freq", "Frequency", names(almosttidyset))
+names(almosttidyset)<-gsub("^f", "Frequency", names(almosttidyset))
+names(almosttidyset)<-gsub("Acc", "Accelerometer", names(almosttidyset))
+names(almosttidyset)<-gsub("Gyro", "Gyroscope", names(almosttidyset))
+names(almosttidyset)<-gsub("Mag", "Magnitude", names(almosttidyset))
+names(almosttidyset)<-gsub("BodyBody", "Body", names(almosttidyset))
 
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 colnames(mean_SD) <- "subject"
