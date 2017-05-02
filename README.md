@@ -8,7 +8,7 @@ The data was obtained from "https://d396qusza40orc.cloudfront.net/getdata%2Fproj
 
 ## Provided Files in this repo
 
-* run_analysis.R contains all the code to perform the analyses described quickly below. The code was written and tested with R version 3.3.3 on Windows environment.
+* run_analysis.R contains all the code to perform the analyses (described quickly below). The code was written and tested with R version 3.3.3 on Windows environment.
 
 * CodeBook.md describes the variables, the data, and any transformations performed to clean up the data.
 
