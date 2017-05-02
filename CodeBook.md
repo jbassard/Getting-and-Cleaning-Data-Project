@@ -18,6 +18,7 @@ The data for this project are donwloaded from here: https://d396qusza40orc.cloud
 * 3-Use descriptive activity names to name the activities in the dataset
 
 * 4-Appropriately label the dataset with descriptive variable names.
+
 * 5-From the data set in step 4, create a second independent tidy data set, with the average of each variable for each activity and each subject
 * * Average (mean) data by Subject and by Activity
 * * Write the final table
@@ -27,17 +28,17 @@ This TidyDataSet contains 180 rows and 82 columns.
 Columns represent the different variables used for this project.
 The data were averaged and grouped by row, based on Subject and Activity identifiers.
 Subject column is numbered sequentially from 1 to 30.
-Activity column has 6 type-names as listed below:
-* WALKING (value 1): subject was walking during the test
-* WALKING_UPSTAIRS (value 2): subject was walking up during the test
-* WALKING_DOWNSTAIRS (value 3): subject was walking down during the test
-* SITTING (value 4): subject was sitting during the test
-* STANDING (value 5): subject was standing during the test
-* LAYING (value 6): subject was laying down during the test
+ActivitName column has 6 type-names as listed below:
+* WALKING (activity value 1): subject was walking during the test
+* WALKING_UPSTAIRS (activity value 2): subject was walking up during the test
+* WALKING_DOWNSTAIRS (activity value 3): subject was walking down during the test
+* SITTING (activity value 4): subject was sitting during the test
+* STANDING (activity value 5): subject was standing during the test
+* LAYING (activity value 6): subject was laying down during the test
 
 # The variables in the tidy data
  [1] "Subject"                                                
- [2] "Activity"                                               
+ [2] "ActivityName"                                           
  [3] "TimeBodyAccelerometer-mean()-X"                         
  [4] "TimeBodyAccelerometer-mean()-Y"                         
  [5] "TimeBodyAccelerometer-mean()-Z"                         
@@ -116,8 +117,7 @@ Activity column has 6 type-names as listed below:
 [78] "FrequencyBodyGyroscopeMagnitude-meanFrequency()"        
 [79] "FrequencyBodyGyroscopeJerkMagnitude-mean()"             
 [80] "FrequencyBodyGyroscopeJerkMagnitude-std()"              
-[81] "FrequencyBodyGyroscopeJerkMagnitude-meanFrequency()"    
-[82] "ActivityName"  
+[81] "FrequencyBodyGyroscopeJerkMagnitude-meanFrequency()"
 
 # Variable units
-"Activity" variable is factor type. "Subject" variable is integer type. All the other variables are numeric type.
+"ActivityName" variable is character type. "Subject" variable is integer type. All the other variables are numeric type.
