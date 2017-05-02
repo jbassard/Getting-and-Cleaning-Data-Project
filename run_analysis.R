@@ -35,7 +35,7 @@ names(Xmerge)<- variablenames$V2
 thedataset <- cbind(Xmerge, Subjectmerge, Ymerge)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement
-selectedvar <- variablenames[grep("mean\\(\\) | std\\(\\)", variablenames[,2]),]
+selectedvar <- variablenames[grep("mean\\(\\) | std\\(\\) | Activity | Subject", variablenames[,2]),]
 mean_SD <- thedataset[,selectedvar[,1]]
 
 #Uses descriptive activity names to name the activities in the dataset
