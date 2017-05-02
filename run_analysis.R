@@ -10,7 +10,6 @@ if(!file.exists(".data/UCI HAR Dataset")) {
 #Merging the training and the test sets to create one dataset
 ##First get file path
 path_data <- file.path("./data", "UCI HAR Dataset")
-files<-list.files(path_data, recursive=TRUE)
 
 ##Then read the various files used for the assignement
 Xtest <- read.table(file.path(path_data, "test", "X_test.txt"), header = FALSE)
