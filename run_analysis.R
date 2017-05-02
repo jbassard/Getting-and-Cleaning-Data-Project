@@ -13,17 +13,25 @@ path_data <- file.path("./data", "UCI HAR Dataset")
 files<-list.files(path_data, recursive=TRUE)
 
 ##Then read the various files used for the assignement
-Xtest <- read.table(file.path(path_data, "test" , "X_test.txt" ), header = FALSE)
+Xtest <- read.table(file.path(path_data, "test", "X_test.txt" ), header = FALSE)
 Xtrain <- read.table(file.path(path_data, "train", "X_train.txt"), header = FALSE)
-Ytest  <- read.table(file.path(path_data, "test" , "Y_test.txt" ), header = FALSE)
+Ytest  <- read.table(file.path(path_data, "test", "Y_test.txt" ), header = FALSE)
 Ytrain <- read.table(file.path(path_data, "train", "Y_train.txt"), header = FALSE)
-SubjectTest  <- read.table(file.path(path_data, "test" , "subject_test.txt"), header = FALSE)
+SubjectTest  <- read.table(file.path(path_data, "test", "subject_test.txt"), header = FALSE)
 SubjectTrain <- read.table(file.path(path_data, "train", "subject_train.txt"), header = FALSE)
 
-##Finally, merge the trainings and the tests datasets in one dataset, first by rows then by columns merging
+##Merge the trainings and the tests datasets in one dataset, first by rows merging
 Xmerge <- rbind(Xtrain, Xtest)
 Ymerge <- rbind(Ytrain, Ytest)
 Subjectmerge <- rbind(SubjectTrain, SubjectTest)
+
+##Create names for variables
+names(Xmerge) <- c("Subject")
+names(Ymerge) <- c("Activity")
+variable_names <- read.table(file.path(path_data, "features.txt"), header=FALSE)
+names(Subjectmerge)<- variable_names$V2
+
+##Final merging (by column)
 thedataset <- cbind(Xmerge, Ymerge, Subjectmerge)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement
