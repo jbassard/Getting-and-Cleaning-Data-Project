@@ -29,7 +29,7 @@ Subjectmerge <- rbind(SubjectTrain, SubjectTest)
 ##Create names for variables
 names(Subjectmerge) <- c("Subject")
 names(Ymerge) <- c("Activity")
-names(Xmerge)<- variablenames$V2
+names(Xmerge) <- variablenames$V2
 
 ##Final merging (by column)
 thedataset <- cbind(Xmerge, Subjectmerge, Ymerge)
@@ -66,4 +66,3 @@ TidyDataSet <- TidyDataSet[ ,-3] #remove extra column named "Activity"
 
 ##Write the final table
 write.table(TidyDataSet, "./data/TidyDataSet.txt", row.name=FALSE, col.names = TRUE)
-View (TidyDataSet)
