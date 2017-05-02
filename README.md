@@ -20,5 +20,5 @@ The R script "run_analysis.R" does the following:
  * Combines trainings and tests datasets in one metadataset.
  * Retrieves only columns containing mean or standard deviation data.
  * Names the activities in the dataset using descriptive activity names
- * Labels the dataset with descriptive variable names
- * Creates a tidy dataset "TidyDataSet.txt" in Data folder. "TidyDataSet.txt" consists of the average (mean) value of each variable for each subject and activity pair.
+ * relabels the dataset with descriptive variable names
+ * Creates a tidy dataset "TidyDataSet.txt" in "Data" folder. "TidyDataSet.txt" consists of the average (mean) value of each variable for each subject and activity pair.
