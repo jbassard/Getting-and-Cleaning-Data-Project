@@ -43,7 +43,7 @@ selection <- (grepl("Activity" , colNames) | grepl("Subject" , colNames) | grepl
 meanSD <- thedataset[ , selection == TRUE]
 
 #Uses descriptive activity names to name the activities in the dataset
-##Name columns in "activityLabels"
+##Name columns in "activityLabels", with one column matching to the data table to merge with
 colnames(activityLabels) <- c("Activity","ActivityName")
 
 ##Merge "activityLabels" with "meanSD"
@@ -59,11 +59,9 @@ names(almosttidyset)<-gsub("Mag", "Magnitude", names(almosttidyset))
 names(almosttidyset)<-gsub("BodyBody", "Body", names(almosttidyset))
 
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
-colnames(mean_SD) <- "subject"
-total <- cbind(Xmerge, activityLabels, mean_SD)
+##Average (mean) data by subject and by activity
+TidyDataSet <- aggregate(. ~Subject + Activity, almosttidyset, FUN = mean)
+TidyDataSet <- TidyDataSet[order(TidyDataSet$Subject, TidyDataSet$Activity), ]
 
-TidyDataSet <- aggregate(. ~subject + activity, thedataset, mean)
-TidyDataSet <- TidyDataSet[order(TidyDataSet$subject, TidyDataSet$activity), ]
-
-View(TidyDataSet)
+##Write the final table
 write.table(TidyDataSet, "./data/TidyDataSet.txt", row.name=FALSE, col.names = TRUE)
