@@ -16,7 +16,7 @@ The data was obtained from "https://d396qusza40orc.cloudfront.net/getdata%2Fproj
 
 ## Code explaination
 
-The R script "run_analysis.R" does the following:
+The R script "run_analysis.R" does in order the following:
  * Downloads the dataset and unzips it (only if files do not exist in the working directory)
  * Loads the different datasets and information
  * Combines trainings and tests datasets in one metadataset.
