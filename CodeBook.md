@@ -9,9 +9,9 @@ The data for this project are donwloaded from here: https://d396qusza40orc.cloud
 
 # Transformation and work performed by "run_analysis.R" on data to obtain "TidyDataSet.txt"
 * 1-Merge the training and the test sets to create one dataset
-* * First by rows merging
-* * Create names for variables
-* * Final merging (by column)
+ * First by rows merging
+ * Create names for variables
+ * Final merging (by column)
 
 * 2-Extract only the mean and standard deviation for each measurement
 
@@ -19,8 +19,8 @@ The data for this project are donwloaded from here: https://d396qusza40orc.cloud
 
 * 4-Appropriately label the dataset with descriptive variable names.
 * 5-From the data set in step 4, create a second independent tidy data set, with the average of each variable for each activity and each subject
-* * Average (mean) data by Subject and by Activity
-* * Write the final table
+ * Average (mean) data by Subject and by Activity
+ * Write the final table
 
 # TidyDataSet description
 This TidyDataSet contains 180 rows and 82 columns.
