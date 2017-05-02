@@ -7,8 +7,7 @@ if(!file.exists("./data/Dataset.zip")) {
 if(!file.exists(".data/UCI HAR Dataset")) {
 	unzip(zipfile="./data/Dataset.zip", exdir="./data")}
 
-#Merging the training and the test sets to create one dataset
-##First get file path
+##Store file path
 path_data <- file.path("./data", "UCI HAR Dataset")
 
 ##Then read the various files used for the assignement
@@ -18,7 +17,9 @@ Ytest  <- read.table(file.path(path_data, "test", "Y_test.txt"), header = FALSE)
 Ytrain <- read.table(file.path(path_data, "train", "Y_train.txt"), header = FALSE)
 SubjectTest  <- read.table(file.path(path_data, "test", "subject_test.txt"), header = FALSE)
 SubjectTrain <- read.table(file.path(path_data, "train", "subject_train.txt"), header = FALSE)
+variablenames <- read.table(file.path(path_data, "features.txt"), header=FALSE)
 
+#Merging the training and the test sets to create one dataset
 ##Merge the trainings and the tests datasets in one dataset, first by rows merging
 Xmerge <- rbind(Xtrain, Xtest)
 Ymerge <- rbind(Ytrain, Ytest)
@@ -27,7 +28,6 @@ Subjectmerge <- rbind(SubjectTrain, SubjectTest)
 ##Create names for variables
 names(Subjectmerge) <- c("Subject")
 names(Ymerge) <- c("Activity")
-variablenames <- read.table(file.path(path_data, "features.txt"), header=FALSE)
 names(Xmerge)<- variablenames$V2
 
 ##Final merging (by column)
