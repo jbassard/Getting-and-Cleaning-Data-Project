@@ -13,9 +13,9 @@ path_data <- file.path("./data", "UCI HAR Dataset")
 files<-list.files(path_data, recursive=TRUE)
 
 ##Then read the various files used for the assignement
-Xtest <- read.table(file.path(path_data, "test", "X_test.txt" ), header = FALSE)
+Xtest <- read.table(file.path(path_data, "test", "X_test.txt"), header = FALSE)
 Xtrain <- read.table(file.path(path_data, "train", "X_train.txt"), header = FALSE)
-Ytest  <- read.table(file.path(path_data, "test", "Y_test.txt" ), header = FALSE)
+Ytest  <- read.table(file.path(path_data, "test", "Y_test.txt"), header = FALSE)
 Ytrain <- read.table(file.path(path_data, "train", "Y_train.txt"), header = FALSE)
 SubjectTest  <- read.table(file.path(path_data, "test", "subject_test.txt"), header = FALSE)
 SubjectTrain <- read.table(file.path(path_data, "train", "subject_train.txt"), header = FALSE)
@@ -35,9 +35,6 @@ names(Subjectmerge)<- variable_names$V2
 thedataset <- cbind(Xmerge, Ymerge, Subjectmerge)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement
-##First read data descriptions
-variable_names <- read.table(file.path(path_data, "features.txt"), header=FALSE)
-
 ##Extract measurements on mean and SD
 selected_var <- variable_names[grep("mean\\(\\)| std\\(\\)", variable_names[,2]),]
 mean_SD <- thedataset[,selected_var[,1]]
