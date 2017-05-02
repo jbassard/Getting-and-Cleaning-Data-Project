@@ -43,11 +43,11 @@ selection <- (grepl("Activity" , colNames) | grepl("Subject" , colNames) | grepl
 meanSD <- thedataset[ , selection == TRUE]
 
 #Uses descriptive activity names to name the activities in the dataset
-colnames(Ymerge) <- "activity"
-Ymerge$activitylabel <- factor(Ymerge$activity, labels = as.character(activityLabels[ ,2]))
-descriptiveactivity <- Ymerge[ , -1]
+##Name columns in "activityLabels"
+colnames(activityLabels) <- c("Activity","ActivityName")
 
-View(descriptiveactivity)
+##Merge "activityLabels" with "meanSD"
+almosttidyset <- merge(meanSD, activityLabels, by= "Activity", all.x=TRUE)
 
 #Appropriately labels the data set with descriptive variable names.
 
