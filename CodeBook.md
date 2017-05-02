@@ -7,7 +7,7 @@ Data Source for this assignement was datasets generated from Human Activity Reco
 A full description is available at the site where the data was obtained: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 The data for this project are donwloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-# Transformation and work performed by "run_analysis.R" on data to obtain "TidyDataSet"
+# Transformation and work performed by "run_analysis.R" on data to obtain "TidyDataSet.txt"
 * 1-Merge the training and the test sets to create one dataset
 ** First by rows merging
 ** Create names for variables
