@@ -12,6 +12,8 @@ The data was obtained from "https://d396qusza40orc.cloudfront.net/getdata%2Fproj
 
 * CodeBook.md describes the variables, the data, and any transformations performed to clean up the data.
 
+* TidyDataSet.txt, textfile result from running "run_analysis.R" script.
+
 ## Code explaination
 
 The R script "run_analysis.R" does the following:
