@@ -10,7 +10,7 @@ if(!file.exists(".data/UCI HAR Dataset")) {
 ##Store file path
 path_data <- file.path("./data", "UCI HAR Dataset")
 
-##Then read the various files used for the assignement
+##Then read and store the various files used for the assignement
 Xtest <- read.table(file.path(path_data, "test", "X_test.txt"), header = FALSE)
 Xtrain <- read.table(file.path(path_data, "train", "X_train.txt"), header = FALSE)
 Ytest  <- read.table(file.path(path_data, "test", "Y_test.txt"), header = FALSE)
@@ -18,6 +18,7 @@ Ytrain <- read.table(file.path(path_data, "train", "Y_train.txt"), header = FALS
 SubjectTest  <- read.table(file.path(path_data, "test", "subject_test.txt"), header = FALSE)
 SubjectTrain <- read.table(file.path(path_data, "train", "subject_train.txt"), header = FALSE)
 variablenames <- read.table(file.path(path_data, "features.txt"), header=FALSE)
+activityLabels <- read.table(file.path(path_data, "activity_labels.txt"),header = FALSE)
 
 #Merging the training and the test sets to create one dataset
 ##Merge the trainings and the tests datasets in one dataset, first by rows merging
@@ -34,14 +35,10 @@ names(Xmerge)<- variablenames$V2
 thedataset <- cbind(Xmerge, Subjectmerge, Ymerge)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement
-selectedvar <- variablenames[grep("mean\\(\\)| std\\(\\)", variablenames[,2]),]
+selectedvar <- variablenames[grep("mean\\(\\) | std\\(\\)", variablenames[,2]),]
 mean_SD <- thedataset[,selectedvar[,1]]
 
 #Uses descriptive activity names to name the activities in the dataset
-##Read descriptive activity names from "activity_labels.txt"
-activityLabels <- read.table(file.path(path_data, "activity_labels.txt"),header = FALSE)
-
-##activity names applied to the dataset
 colnames(Ymerge) <- "activity"
 Ymerge$activitylabel <- factor(Ymerge$activity, labels = as.character(activityLabels[ ,2]))
 descriptiveactivity <- Ymerge[ , -1]
