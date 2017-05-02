@@ -1,13 +1,13 @@
 This Code Book summarizes the resulting data presented in "TidyDataSet.txt".
 
 
-#Source of data
+# Source of data
 
 Data Source for this assignement was datasets generated from Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living.
 A full description is available at the site where the data was obtained: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 The data for this project are donwloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-#Transformation and work performed by "run_analysis.R" on data to obtain "TidyDataSet"
+# Transformation and work performed by "run_analysis.R" on data to obtain "TidyDataSet"
 * 1-Merge the training and the test sets to create one dataset
 ** First by rows merging
 ** Create names for variables
@@ -22,7 +22,7 @@ The data for this project are donwloaded from here: https://d396qusza40orc.cloud
 ** Average (mean) data by Subject and by Activity
 ** Write the final table
 
-#TidyDataSet description
+# TidyDataSet description
 This TidyDataSet contains 180 rows and 82 columns.
 Columns represent the different variables used for this project.
 The data were averaged and grouped by row, based on Subject and Activity identifiers.
@@ -35,7 +35,7 @@ Activity column has 6 type-names as listed below:
 * STANDING (value 5): subject was standing during the test
 * LAYING (value 6): subject was laying down during the test
 
-##The variables in the tidy data
+# The variables in the tidy data
  [1] "Subject"                                                
  [2] "Activity"                                               
  [3] "TimeBodyAccelerometer-mean()-X"                         
@@ -119,5 +119,5 @@ Activity column has 6 type-names as listed below:
 [81] "FrequencyBodyGyroscopeJerkMagnitude-meanFrequency()"    
 [82] "ActivityName"  
 
-##Variable units
+# Variable units
 "Activity" variable is factor type. "Subject" variable is integer type. All the other variables are numeric type.
